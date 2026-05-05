@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+venv/
+.venv/
+env/
+
+# YOLO / Ultralytics
+runs/
+models/
+
+# Dataset generated files (keep directory stubs)
+dataset/images/*.jpg
+dataset/labels/*.txt
+dataset/train/
+dataset/val/
+dataset/dataset.yaml
+
+# Environment
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
