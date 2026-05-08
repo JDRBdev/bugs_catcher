@@ -335,6 +335,19 @@ def main() -> None:
                         # Pasar al siguiente objetivo
                         laser_target_idx = (laser_target_idx + 1) % len(laser_targets)
                         laser_arrived_at = None
+                    else:
+                        # Mientras el láser permanece sobre el objetivo comprobamos impactos:
+                        # Si el puntero alcanza un insecto del `target_class`, ese insecto desaparece.
+                        hit_radius = Insect.SIZE / 2
+                        new_insects: list[Insect] = []
+                        for ins in insects:
+                            if ins.class_id == target_class:
+                                cx, cy = ins.center
+                                if np.hypot(cx - laser_pos[0], cy - laser_pos[1]) <= hit_radius:
+                                    # Insecto alcanzado: lo omitimos (desaparece)
+                                    continue
+                            new_insects.append(ins)
+                        insects = new_insects
                 else:
                     ratio = speed_px / dist
                     laser_pos = (lx + (tx - lx) * ratio, ly + (ty - ly) * ratio)
