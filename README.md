@@ -35,7 +35,7 @@ git clone https://github.com/JDRBdev/bugs_catcher.git
 cd bugs_catcher
 
 # 2. Crear entorno virtual (recomendado)
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate          # Linux/macOS
 # venv\Scripts\activate           # Windows
 
